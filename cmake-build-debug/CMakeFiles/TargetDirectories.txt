@@ -1,0 +1,2 @@
+C:/Users/Kermi/CLionProjects/Simple-Adventure-Game/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Kermi/CLionProjects/Simple-Adventure-Game/cmake-build-debug/CMakeFiles/rebuild_cache.dir
