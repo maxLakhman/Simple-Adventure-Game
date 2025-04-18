@@ -1,0 +1,28 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "C:/msys64/mingw64/include/gtk-3.0", // Adjust this path as necessary
+                "C:/msys64/mingw64/include/glib-2.0", // Adjust this path as necessary
+                "C:/msys64/mingw64/lib/glib-2.0/include", // Adjust this path as necessary
+                "C:/msys64/mingw64/include/pango-1.0", // Adjust this path as necessary
+                "C:/msys64/mingw64/include/cairo"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+
+            "compilerPath": "C:/msys64/mingw64/bin/gcc.exe", // Adjust if necessary
+            "cStandard": "c11", // or c99, depending on your needs
+            "cppStandard": "c++17", // or another version as needed
+            "intelliSenseMode": "gcc-x64", // Adjust if using a different compiler
+            "windowsSdkVersion": "10.0.22621.0"
+           
+        }
+    ],
+    "version": 4
+}
