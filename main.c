@@ -8,9 +8,12 @@ int main() {
   cbreak();
   keypad(stdscr, TRUE);
 
-  int current = 0;
-  int running = 1;
+  int current = 0; //this is the current node
+  int running = 1; 
+  
 
+  //While loop contains the main game loop, displays the text on screen 
+  //Also reads the user input
   while (running) {
     clear();
     displayNode(current);

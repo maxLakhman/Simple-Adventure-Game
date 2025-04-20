@@ -2,21 +2,29 @@
 #include <ncurses.h>
 #include "story.h"
 
+//The struct is used to bring format to each scenario the user can encounter
 typedef struct {
-  const char *desc;
-  const char *opt1;
-  const char *opt2;
-  int next1;
-  int next2;
+  const char *desc;  //scenario for each situation here
+  const char *opt1; //text options you can choose
+  const char *opt2; 
+  int next1;  //If you choose the first option, it takes you to this index in the story list
+  int next2;  //If you choose the second option, it takes you to this index
 } Node;
 
 Node story[] = {
-  {"You wake up in a dark room.", "Search the room", "Go back to sleep", 1, 2},
-  {"You find a hidden door.", "Enter it", "Ignore it", 3, 2},
+  //Start of the story
+  {"You wake to the sound of water dripping like a heartbeat. The air is thick here, and damp. You can't help but notice the stench of blood. \n You sit up and look at your surroundings. You're in a stone chamber, lit by a dying torch. You don't remember how you got here, but the name Charlie is written in your hand in blood", "Stand and search the room", "Call out for Charlie", 1, 2},
+
+  {"You search the room. The walls are wet and cold. Your hand brushes something soft on the wall. A torn piece of a shirt. \n There's also a narrow crack in the wall, just wide enough to slip through.", "Enter it", "Ignore it", 3, 4},
+  
+  //2 vvvvv
+  {"Your voice echoes in the chamber. 'Charlie?' For a moment, silence. Then — footsteps. They're not running. They're dragging.", "", "", 5, 6}
+  
   {"You fall asleep forever. The End.", NULL, NULL, -1, -1},
   {"You escape into the light. The End.", NULL, NULL, -1, -1}
 };
 
+//Displays the scenario and options to the user depending on the current node/ Index
 void displayNode(int index) {
   mvprintw(0, 0, "%s\n", story[index].desc);
   if (story[index].opt1) mvprintw(2, 0, "1. %s", story[index].opt1);
@@ -24,6 +32,11 @@ void displayNode(int index) {
   mvprintw(5, 0, "(Press q to quit)");
 }
 
+//Inputs: 
+//index = current node 
+//choice = the number the user typed in
+//Output:
+//The updated current node after the user choice
 int getNext(int index, int choice) {
   if (choice == 1) return story[index].next1;
   if (choice == 2) return story[index].next2;
