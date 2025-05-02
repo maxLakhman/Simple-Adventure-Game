@@ -16,7 +16,9 @@ typedef struct {
   const char *property;
 }PlayerObject;
 
-PlayerObject playerInventory[] = {}
+const INVENTORY_SIZE = 20;
+int num_items = 0;
+PlayerObject playerInventory[INVENTORY_SIZE] = {}
 
 Node story[] = {
   //Start of the story
@@ -67,7 +69,13 @@ void displayNode(int index) {
 //will add the object struct with two attributes to the inventory. 
 void add_to_inventory(char * name, char * property){
   PlayerObject object = {name, property};
-  playerInventory.append(object);
+  
+  if (num_items > INVENTORY_SIZE){
+    mvprintw(5,0,"Cannot pick up - inventory is full");
+  }
+  else {
+    player_inventory[num_items] = object;
+  }
 }
 
 //Inputs: 
