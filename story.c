@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <ncurses.h>
 #include "story.h"
+#include <stdlib.h>
 
 //The struct is used to bring format to each scenario the user can encounter
 typedef struct {
@@ -11,14 +12,15 @@ typedef struct {
   int next2;  //If you choose the second option, it takes you to this index
 } Node;
 
+/*
 typedef struct {
-  const char *objectname;
-  const char *property;
+  const char objectname[30];
 }PlayerObject;
 
 const int INVENTORY_SIZE = 20;
 int num_items = 0;
-PlayerObject playerInventory[INVENTORY_SIZE] = {};
+PlayerObject * playerInventory = playerInventory = malloc( INVENTORY_SIZE * sizeof(struct PlayerObject));
+*/
 
 Node story[] = {
   //Start of the story
@@ -67,6 +69,7 @@ void displayNode(int index) {
 //property = the property string that will be associated with that object
 //Outputs: 
 //will add the object struct with two attributes to the inventory. 
+/*
 void add_to_inventory(char * name, char * property){
   PlayerObject object = {name, property};
   
@@ -77,6 +80,7 @@ void add_to_inventory(char * name, char * property){
     player_inventory[num_items] = object;
   }
 }
+*/
 
 //Inputs: 
 //index = current node 

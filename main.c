@@ -9,8 +9,20 @@ int main() {
   keypad(stdscr, TRUE);
 
   int current = 0; //this is the current node
-  int running = 1; 
-  
+  int running = 0;
+
+  //This implements the main menu
+  while (!running){
+    clear();
+    mvprintw(0, 0, "Welcome to the main menu. Press space to start.");
+    refresh();
+    int input = getch();
+    switch(input){
+    case ' ':
+      running = 1;
+      break;
+    }
+  }
 
   //While loop contains the main game loop, displays the text on screen 
   //Also reads the user input
