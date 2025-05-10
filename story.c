@@ -12,16 +12,6 @@ typedef struct {
   int next2;  //If you choose the second option, it takes you to this index
 } Node;
 
-/*
-typedef struct {
-  const char objectname[30];
-}PlayerObject;
-
-const int INVENTORY_SIZE = 20;
-int num_items = 0;
-PlayerObject * playerInventory = playerInventory = malloc( INVENTORY_SIZE * sizeof(struct PlayerObject));
-*/
-
 Node story[] = {
   //Start of the story
   {"You wake to the sound of water dripping like a heartbeat. The air is thick here, and damp. You can't help but notice the stench of blood. \n You sit up and look at your surroundings. You're in a stone chamber, lit by a dying torch. You don't remember how you got here, but the name Charlie is written in your hand in blood", "Stand and search the room", "Call out for Charlie", 1, 2},
@@ -63,24 +53,6 @@ void displayNode(int index) {
   if (story[index].opt2) mvprintw(3, 0, "2. %s", story[index].opt2);
   mvprintw(5, 0, "(Press q to quit)");
 }
-
-//Inputs: 
-//name = name of object that will be added
-//property = the property string that will be associated with that object
-//Outputs: 
-//will add the object struct with two attributes to the inventory. 
-/*
-void add_to_inventory(char * name, char * property){
-  PlayerObject object = {name, property};
-  
-  if (num_items > INVENTORY_SIZE){
-    mvprintw(5,0,"Cannot pick up - inventory is full");
-  }
-  else {
-    player_inventory[num_items] = object;
-  }
-}
-*/
 
 //Inputs: 
 //index = current node 
