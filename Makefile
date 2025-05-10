@@ -21,7 +21,7 @@ CFLAGS = -Wall -std=c11 -ggdb
 LDFLAGS = -lncurses
 
 # Source and object files
-SRC = main.c story.c
+SRC = main.c story.c inventory.c
 OBJ = $(SRC:.c=.o)
 
 # Default build target

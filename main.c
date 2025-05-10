@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <ncurses.h>
 #include "story.h"
+#include "inventory.h"
 
 int main() {
   initscr();
@@ -10,6 +11,9 @@ int main() {
 
   int current = 0; //this is the current node
   int running = 0;
+  
+  Inventory playerInventory;
+  initInventory(&playerInventory);
 
   //This implements the main menu
   while (!running){
@@ -38,6 +42,9 @@ int main() {
       break;
     case '2':
       current = getNext(current, 2);
+      break;
+    case 'i':
+      showInventory(&playerInventory);
       break;
     case 'q':
       running = 0;
