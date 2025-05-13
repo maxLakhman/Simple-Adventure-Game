@@ -11,7 +11,7 @@ int main() {
 
   int current = 0; //this is the current node
   int running = 0;
-  
+
   Inventory playerInventory;
   initInventory(&playerInventory);
 
@@ -25,7 +25,6 @@ int main() {
     case ' ':
       running = 1;
       break;
-    }
   }
 
   //While loop contains the main game loop, displays the text on screen 
@@ -63,5 +62,5 @@ int main() {
 
   endwin();
   return 0;
-}
+  }}
 

@@ -2,6 +2,7 @@
 #include <ncurses.h>
 #include "story.h"
 #include <stdlib.h>
+#include <string.h>
 
 //The struct is used to bring format to each scenario the user can encounter
 typedef struct {
@@ -12,7 +13,9 @@ typedef struct {
   int next2;  //If you choose the second option, it takes you to this index
 } Node;
 
-Node story[] = {
+Node story[] = {};
+
+Node story1[] = {
   //Start of the story
   {"You wake to the sound of water dripping like a heartbeat. The air is thick here, and damp. You can't help but notice the stench of blood. \n You sit up and look at your surroundings. You're in a stone chamber, lit by a dying torch. You don't remember how you got here, but the name Charlie is written in your hand in blood", "Stand and search the room", "Call out for Charlie", 1, 2},
 
@@ -64,3 +67,7 @@ int getNext(int index, int choice) {
   if (choice == 2) return story[index].next2;
   return index;
 }
+
+
+
+
