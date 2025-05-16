@@ -2,6 +2,7 @@
 #include <ncurses.h>
 #include "story.h"
 #include "inventory.h"
+#include "stdlib.h"
 
 int main() {
   initscr();
@@ -15,19 +16,36 @@ int main() {
   Inventory playerInventory;
   initInventory(&playerInventory);
 
+  
+  FILE *file;
+  char buffer[10];
+  
   //This implements the main menu
   while (!running){
     clear();
-    mvprintw(0, 0, "Welcome to the main menu. Press enter to start a new game, and space to resume your old game.");
+    mvprintw(0, 0, "Welcome to the main menu. Press space to start a new game, and enter to resume your old game.");
     refresh();
     int input = getch();
     switch(input){
     case ' ':
       running = 1;
       break;
-    case '\n':
+    case '\n': //if they hit enter, they are trying to load the game
       running = 1;
-      current = 3;
+
+      file = fopen("example.txt", "r");
+      if (file == NULL) {
+        perror("Error opening file");
+        return 1;
+      }
+
+      while (fgets(buffer, sizeof(buffer), file) != NULL) {
+        printf("%s", buffer);
+      }
+      
+      current = atoi(buffer);
+
+      fclose(file);
       break;
   }
 
@@ -38,7 +56,7 @@ int main() {
     displayNode(current);
     refresh();
 
-    FILE file_pointer;
+    FILE *file_pointer;
     char file_path[] = "example.txt"; // Replace with your file path
 
     int input = getch();
