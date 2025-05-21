@@ -13,39 +13,87 @@ typedef struct {
   int next2;  //If you choose the second option, it takes you to this index
 } Node;
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 Node story[] = {
-  //Start of the story
-  {"You wake to the sound of water dripping like a heartbeat. The air is thick here, and damp. You can't help but notice the stench of blood. \n You sit up and look at your surroundings. You're in a stone chamber, lit by a dying torch. You don't remember how you got here, but the name Charlie is written in your hand in blood", "Stand and search the room", "Call out for Charlie", 1, 2},
+  // Index 0 — START
+  {"You wake up cold and damp, lying on rough stone. The scent of mildew and blood clings to the air. On your palm, in smeared blood, the word 'ASH' is written. A broken torch flickers above.", 
+   "Stand and examine the room", "Whisper 'Ash' into the darkness", 1, 2},
 
-  //Gen 2
-  {"You search the room. The walls are wet and cold. Your hand brushes something soft on the wall. A torn piece of a shirt. \n There's also a narrow crack in the wall, just wide enough to slip through.", "Enter it", "Take the torch and stay where you are", 3, 4},
-  
-  {"Your voice echoes in the chamber. 'Charlie?' For a moment, silence. Then, suddenly you hear footsteps. They're not running. They're dragging.", "Hide", "Search for a way out", 5, 1},
+  // Index 1
+  {"The chamber is circular. A decayed table sits against the wall, covered in strange bone carvings. Two tunnels lead out: one choked with vines, the other unnaturally dark.", 
+   "Enter the vine-choked tunnel", "Step into the darkness", 3, 4},
 
-  //Gen 3
-  {"You squeeze through the crack in the wall, scraping your arm on the jagged stone. You find yourself in a dark hallway. At the far end hangs a mirror. Its cracked but your reflection is whole and grinning ear to ear.", "Approach the mirror", "Look away and run down the hall", 6, 7},
-  
-  {"You lift the dying torch from the sconce. Shadows leap across the stone walls. The room is still, until you hear it: soft breathing, from just behind you. But when you spin around, there's no one there. The crack in the wall seems smaller now. Or is the room shrinking?","Press your ear to the wall", "Ignore it and sit down", 8, 9},
+  // Index 2
+  {"Your voice disappears into the gloom. Silence answers, then: a whisper. Not from the room, but inside your head. 'You're not supposed to remember yet,' it says. A section of the stone wall begins to tremble.", 
+   "Approach the trembling wall", "Ignore it and explore the room", 5, 1},
 
-  {"You slip behind a pile of crumbled stone and hold your breath. The dragging steps grow louder. A figure enters the room. Tall, thin, head lolling like its detached at the neck. It stops, it sniffs, then it smiles. Its voice sounds exactly like yours: 'Charlie is waiting for you'.", "Stay hidden", "Speak to the figure", 10, 11},
+  // Index 3
+  {"You push through the vines. They sting your skin. Beyond is a narrow corridor lit by glowing moss. At the end, a pool of water reflects a starless sky. Something stirs beneath its surface.", 
+   "Look into the pool", "Keep walking", 6, 7},
 
-  //Gen 4
-  {"You approach the mirror. Your reflection watches you, but not quite right. It blinks when you dont. It smiles before you do. Then it whispers, 'You're almost ready to remember'.", "Touch the mirror", NULL, 12 , -1},
+  // Index 4
+  {"You step into the dark tunnel. Your torch dies instantly. You walk by memory alone until you see a door covered in runes, pulsing faint red light.", 
+   "Touch the runes", "Turn back", 8, 1},
 
-  {"You tear your gaze from the mirror and bolt down the hall. The floor stretches beneath you, never ending, until it suddenly stops. You trip. Fall. You're back in the stone chamber, only this time, the mirror is already shattered. Blood drips from your hands. Charlie's name is carved into your arm. You scream, but no sound comes out. The silence answers you with a memory. The fire. The locked door. The pleads for help you didn't answer. You were never running from the mirror. Only from yourself.", NULL, NULL, -1, -1},
+  // Index 5
+  {"The wall cracks and collapses inward, revealing a hidden staircase spiraling down. A gust of warm air rises up, smelling faintly of ash and old paper.", 
+   "Descend the staircase", "Stay where you are", 9, 1},
 
-  {"blah blah my ear is to the wall", NULL, NULL, -1, -1},
+  // Index 6
+  {"You stare into the pool. Your reflection looks back — but it’s not copying you. It mouths, 'She’s waiting.' The surface ripples. You feel hands on your back, pushing.", 
+   "Let the pool take you", "Fight back", 10, 11},
 
-  {"You ignored the torch and escape into the light. The End.", NULL, NULL, -1, -1},
+  // Index 7
+  {"You ignore the pool and press on. Eventually, you reach a dead end where the moss glows brighter. Scratched into the wall: 'YOU LEFT HER'. The air goes still.", 
+   "Touch the moss", "Scream for help", 12, 13},
 
-  {"You press your body against the wall and hold your breath, trying to stay hidden from that ... thing. You notice a faint feeling of lightheadedness as the creature's head starts to seize like he's having a seizure. You hear a faint whispering sound that grows louder with the movements of his head. \"You killed me\" they seem to be saying, vowing revenge. You can't help but wonder if they're connected to whoever or whatever made this place.", NULL, NULL, -1, -1},
+  // Index 8
+  {"The runes glow brighter as you reach out. Pain floods your head. Images flash — fire, chains, a girl calling your name. You fall backward. The door is now open.", 
+   "Enter the room", "Flee back up the tunnel", 14, 1},
 
-  {"The figure doesnt move. Just stands there in the flickering dark, half swallowed by shadow, head tilted like a marionette caught mid pull. \"Charlie is waiting for you\" they say again, slower this time, almost tender. You laugh, dry and broken. \"Charlies dead\" The figure steps closer. You cant move. \"Exactly\" They raise a pale, trembling hand, and something dangles from their fingers, a childs bracelet. Mudcaked. Familiar. \"He waited\".", NULL, NULL, -1, -1},
+  // Index 9
+  {"You descend. At the bottom is a library, abandoned but preserved. On a pedestal lies a book titled 'The Memory of Ash'. The cover is warm to the touch.", 
+   "Read the book", "Burn it with the torch", 14, 13},
 
-  {"You reach out and touch the glass. It's cold. Your reflection places its hand against yours, and you feel skin. Suddently, images flood your mind. A hallway on fire. A locked door. Charlie, \
-screaming behind it. \n You weren't looking for Charlie, you were hiding from him. \n The mirror shatters. You're alone. No torch. No walls. Just the weight  of memory. And a voice, faint but cl\
-ear: 'Now do you remember?' \n You do.", NULL, NULL, -1, -1},
+  // Index 10 — ENDING A
+  {"The water surrounds you, pulling you down. Your breath fails, but you do not drown. You awaken in a warm bed. A voice says, 'Welcome back, Ash.' You've remembered enough to begin again. — ENDING A", 
+   NULL, NULL, -1, -1},
+
+  // Index 11 — ENDING B
+  {"You resist. The hands vanish. The pool boils. A scream erupts from within — yours, from another time. You stagger back, alone but free. For now. — ENDING B", 
+   NULL, NULL, -1, -1},
+
+  // Index 12 — ENDING C
+  {"The moss peels away to reveal a door. Behind it, a mirror. In it, a girl—Ash. Her eyes are sad. 'You promised you'd come back,' she whispers. You step forward, unable to answer. — ENDING C", 
+   NULL, NULL, -1, -1},
+
+  // Index 13 — ENDING D
+  {"Your scream echoes endlessly. No help comes. The light fades. You curl up against the stone, as the moss's glow pulses once, then dies. — ENDING D", 
+   NULL, NULL, -1, -1},
+
+  // Index 14 — ENDING E
+  {"The room beyond the door is a chapel in ruins. Ash stands at its center. 'You left me, but I waited,' she says. You kneel, memory flooding back. Fire. Regret. And forgiveness. — ENDING E", 
+   NULL, NULL, -1, -1}
 };
+
+
+
+
+
+
+
 
 //Displays the scenario and options to the user depending on the current node/ Index
 void displayNode(int index) {
