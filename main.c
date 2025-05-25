@@ -23,7 +23,7 @@ int main() {
   //This implements the main menu
   while (!running){
     clear();
-    mvprintw(0, 0, "Welcome to the main menu. Press space to start a new game, and enter to resume your old game.");
+    mvprintw(0, 0, "Welcome to the main menu. Press space to start a new game, and enter to resume your old game. H to see the controls.");
     refresh();
     int input = getch();
     switch(input){
@@ -46,6 +46,21 @@ int main() {
       current = atoi(buffer);
 
       fclose(file);
+      break;
+    case '1':
+      
+      running = 1;
+      break;
+    case 'h':
+      clear();
+      mvprintw(0, 0, "Controls:\n");
+      mvprintw(1, 0, "1 / 2 - Choose an option\n");
+      mvprintw(2, 0, "i - Open inventory\n");
+      mvprintw(3, 0, "TAB - Save game\n");
+      mvprintw(4, 0, "q - Quit\n");
+      mvprintw(6, 0, "Press any key to return to menu...");
+      refresh();
+      getch();
       break;
   }
 
