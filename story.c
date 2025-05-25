@@ -44,7 +44,7 @@ Node story[] = {
    "Look into the pool", "Keep walking", 6, 7},
 
   // Index 4
-  {"You step into the dark tunnel. Your torch dies instantly. You walk by memory alone until you see a door covered in runes, pulsing faint red light.", 
+  {"You step into the dark tunnel. Your torch dies instantly. You walk by memory alone until you see a door covered in runes, and a pulsing faint red light", 
    "Touch the runes", "Turn back", 8, 1},
 
   // Index 5
@@ -52,7 +52,7 @@ Node story[] = {
    "Descend the staircase", "Stay where you are", 9, 1},
 
   // Index 6
-  {"You stare into the pool. Your reflection looks back — but it’s not copying you. It mouths, 'She’s waiting.' The surface ripples. You feel hands on your back, pushing.", 
+  {"You stare into the pool. Your reflection looks back, but its not copying you. It mouths 'Shes waiting' The surface ripples. You feel hands on your back, pushing", 
    "Let the pool take you", "Fight back", 10, 11},
 
   // Index 7
