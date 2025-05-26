@@ -1,8 +1,11 @@
 #include <stdio.h>
 #include <ncurses.h>
 #include "story.h"
+#include "story_utils.h"
 #include "inventory.h"
 #include "stdlib.h"
+#include "story_ash.h"
+#include "story_cat.h"
 
 int main() {
   initscr();
@@ -10,15 +13,14 @@ int main() {
   cbreak();
   keypad(stdscr, TRUE);
 
-  int current = 0; //this is the current node
+  int current = 0;    //this is the current node
   int running = 0;
-
   Inventory playerInventory;
   initInventory(&playerInventory);
-
-  
-  FILE *file;
-  char buffer[10];
+  Node *story = NULL; //The story the user chooses
+  int story_length = 0;
+  FILE *file;         //The file that the save data is stored at    
+  char buffer[10];    //The buffer that reads the save data
   
   //This implements the main menu
   while (!running){
@@ -48,8 +50,13 @@ int main() {
       fclose(file);
       break;
     case '1':
-      
+      story = ash_story;
+      story_length = ash_story_length;
       running = 1;
+      break;
+    case '2':
+      story = cat_story;
+      story_length = cat_story_length;
       break;
     case 'h':
       clear();
@@ -68,7 +75,7 @@ int main() {
   //Also reads the user input
   while (running) {
     clear();
-    displayNode(current);
+    displayNode(story, current);
     refresh();
 
     FILE *file_pointer;
@@ -77,10 +84,10 @@ int main() {
     int input = getch();
     switch (input) {
     case '1':
-      current = getNext(current, 1);
+      current = getNext(story, current, 1);
       break;
     case '2':
-      current = getNext(current, 2);
+      current = getNext(story, current, 2);
       break;
     case 'i':
       showInventory(&playerInventory);

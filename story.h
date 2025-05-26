@@ -10,7 +10,4 @@ typedef struct {
   int next2;  //If you choose the second option, it takes you to this index
 } Node;
 
-void displayNode(int index);
-int getNext(int index, int choice);
-
 #endif

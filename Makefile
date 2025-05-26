@@ -1,4 +1,3 @@
-
 OS := $(shell uname -s)
 
 ifeq ($(OS), Darwin)
@@ -21,7 +20,7 @@ CFLAGS = -Wall -std=c11 -ggdb
 LDFLAGS = -lncurses
 
 # Source and object files
-SRC = main.c story.c inventory.c
+SRC = main.c story.c inventory.c story_ash.c story_cat.c story_utils.c
 OBJ = $(SRC:.c=.o)
 
 # Default build target
@@ -38,6 +37,6 @@ $(TARGET): $(OBJ)
 # Clean up build files
 .PHONY: clean
 clean:
-	rm -f *.o $(TARGET) *~ *.c# *.gc?? gmon.out analyze.txt sandbox-gmon.* *.dSYM
+	rm -f *.o $(TARGET) *~ *.c# *.gc?? *#  gmon.out analyze.txt sandbox-gmon.* *.dSYM
 
 
