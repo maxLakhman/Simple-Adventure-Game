@@ -7,6 +7,9 @@
 #include "story_ash.h"
 #include "story_cat.h"
 
+
+#define ash_story_length 10
+
 int main() {
   initscr();
   noecho();
@@ -25,13 +28,10 @@ int main() {
   //This implements the main menu
   while (!running){
     clear();
-    mvprintw(0, 0, "Welcome to the main menu. Press space to start a new game, and enter to resume your old game. H to see the controls.");
+    mvprintw(0, 0, "Welcome to the main menu. \n Press 1 to start and enter to resume your old game. H to see the controls.");
     refresh();
     int input = getch();
     switch(input){
-    case ' ':
-      running = 1;
-      break;
     case '\n': //if they hit enter, they are trying to load the game
       running = 1;
 
@@ -84,6 +84,8 @@ int main() {
     int input = getch();
     switch (input) {
     case '1':
+      mvprintw(10, 0, "DEBUG: current = %d", current);
+      mvprintw(11, 0, "DEBUG: story_length = %d", story_length);
       current = getNext(story, current, 1);
       break;
     case '2':
