@@ -8,7 +8,6 @@
 #include "story_cat.h"
 
 
-#define ash_story_length 10
 
 int main() {
   initscr();
@@ -28,25 +27,22 @@ int main() {
   //This implements the main menu
   while (!running){
     clear();
-    mvprintw(0, 0, "Welcome to the main menu. \n Press 1 to start and enter to resume your old game. H to see the controls.");
+    mvprintw(0, 0, "Welcome to the main menu. \n Press 1 to start a horror story, 2 to start a silly story, or enter to resume your old game. H to see the controls.");
     refresh();
+
     int input = getch();
     switch(input){
     case '\n': //if they hit enter, they are trying to load the game
       running = 1;
-
       file = fopen("example.txt", "r");
       if (file == NULL) {
         perror("Error opening file");
         return 1;
       }
-
       while (fgets(buffer, sizeof(buffer), file) != NULL) {
         printf("%s", buffer);
-      }
-      
+      }     
       current = atoi(buffer);
-
       fclose(file);
       break;
     case '1':
@@ -57,6 +53,7 @@ int main() {
     case '2':
       story = cat_story;
       story_length = cat_story_length;
+      running = 1;
       break;
     case 'h':
       clear();
@@ -80,8 +77,8 @@ int main() {
 
     FILE *file_pointer;
     char file_path[] = "example.txt"; // Replace with your file path
-
     int input = getch();
+
     switch (input) {
     case '1':
       mvprintw(10, 0, "DEBUG: current = %d", current);
@@ -105,18 +102,13 @@ int main() {
         printf("Error opening the file.\n");
         return 1; // Indicate an error
       }
-      
       //Since the buffer is a fixed size, what happens if the current node is larger or too large for the buffer
       char buffer[3]; 
       sprintf(buffer, "%d", current);
-
       fputs(buffer, file_pointer);
-      
       fclose(file_pointer); // Close the file
-
       printf("File content cleared successfully.\n");
     }
-
     // End if we hit an invalid or terminal node
     if (current == -1) {
       clear();
@@ -126,7 +118,6 @@ int main() {
       running = 0;
     }
   }
-
   endwin();
   return 0;
   }}
