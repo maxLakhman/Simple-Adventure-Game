@@ -10,20 +10,20 @@
 
 
 int main() {
+  int current = 0;           //this is the current node
+  int running = 0;           //indicates if the game is running
+  Inventory playerInventory;
+  Node *story = NULL;        //The story the user chooses
+  int story_length = 0;
+  FILE *file;                //The file that the save data is stored at    
+  char buffer[10];           //The buffer that reads the save data
+  
+  initInventory(&playerInventory);
   initscr();
   noecho();
   cbreak();
   keypad(stdscr, TRUE);
 
-  int current = 0;    //this is the current node
-  int running = 0;
-  Inventory playerInventory;
-  initInventory(&playerInventory);
-  Node *story = NULL; //The story the user chooses
-  int story_length = 0;
-  FILE *file;         //The file that the save data is stored at    
-  char buffer[10];    //The buffer that reads the save data
-  
   //This implements the main menu
   while (!running){
     clear();
@@ -45,12 +45,12 @@ int main() {
       current = atoi(buffer);
       fclose(file);
       break;
-    case '1':
+    case '1': //if they choose the first story
       story = ash_story;
       story_length = ash_story_length;
       running = 1;
       break;
-    case '2':
+    case '2': //if they choose the second story
       story = cat_story;
       story_length = cat_story_length;
       running = 1;
