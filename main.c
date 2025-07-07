@@ -7,10 +7,8 @@
 #include "story_ash.h"
 #include "story_cat.h"
 
-
-
 int main() {
-  int current = 0;           //this is the current node
+  int current = 0;           //represents the current node
   int running = 0;           //indicates if the game is running
   Inventory playerInventory;
   Node *story = NULL;        //The story the user chooses
@@ -34,7 +32,7 @@ int main() {
     switch(input){
     case '\n': //if they hit enter, they are trying to load the game
       running = 1;
-      file = fopen("example.txt", "r");
+      file = fopen("savedata.txt", "r");
       if (file == NULL) {
         perror("Error opening file");
         return 1;
@@ -76,7 +74,7 @@ int main() {
     refresh();
 
     FILE *file_pointer;
-    char file_path[] = "example.txt"; // Replace with your file path
+    char file_path[] = "savedata.txt"; // Replace with your file path
     int input = getch();
 
     switch (input) {
