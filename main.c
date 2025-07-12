@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <ncurses.h>
+#include <string.h>
 #include "story.h"
 #include "story_utils.h"
 #include "inventory.h"
@@ -15,7 +16,8 @@ int main() {
   int story_length = 0;
   FILE *file;                //The file that the save data is stored at    
   char buffer[10];           //The buffer that reads the save data
-  
+  char story_name[4];
+
   initInventory(&playerInventory);
   initscr();
   noecho();
@@ -46,11 +48,13 @@ int main() {
     case '1': //if they choose the first story
       story = ash_story;
       story_length = ash_story_length;
+      strcpy(story_name, "ash");
       running = 1;
       break;
     case '2': //if they choose the second story
       story = cat_story;
       story_length = cat_story_length;
+      strcpy(story_name, "cat");
       running = 1;
       break;
     case 'h':
@@ -93,17 +97,24 @@ int main() {
       running = 0;
       break;
     case '\t':
-      //What if the user wants to save the game
+      //tab character means the user wants to save the game
       file_pointer = fopen(file_path, "w"); // Open the file in write mode
 
       if (file_pointer == NULL) {
         printf("Error opening the file.\n");
         return 1; // Indicate an error
       }
+      
+      char name_buffer[4];
+      sprintf(name_buffer, "%s", story_name);
+      fputs(name_buffer, file_pointer);
+
       //Since the buffer is a fixed size, what happens if the current node is larger or too large for the buffer
       char buffer[3]; 
       sprintf(buffer, "%d", current);
       fputs(buffer, file_pointer);
+
+      
       fclose(file_pointer); // Close the file
       printf("File content cleared successfully.\n");
     }
