@@ -42,6 +42,19 @@ int main() {
 	sscanf(buffer, "%3s%d", story_name, &current);
       }
       fclose(file);
+      // Load the correct story
+      if (strcmp(story_name, "ash") == 0) {
+        story = ash_story;
+        story_length = ash_story_length;
+      } else if (strcmp(story_name, "cat") == 0) {
+        story = cat_story;
+        story_length = cat_story_length;
+      } else {
+        mvprintw(10, 0, "Error: story genuinely broken dude");
+        refresh();
+        getch();
+        break; // This break is now safe
+      }
       running = 1;
       break;
     case '1': //if they choose the first story
