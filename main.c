@@ -32,18 +32,17 @@ int main() {
 
     int input = getch();
     switch(input){
-    case '\n': //if they hit enter, they are trying to load the game
-      running = 1;
+    case '\n': //User is trying to load the game
       file = fopen("savedata.txt", "r");
       if (file == NULL) {
         perror("Error opening file");
         return 1;
       }
-      while (fgets(buffer, sizeof(buffer), file) != NULL) {
-        printf("%s", buffer);
-      }     
-      current = atoi(buffer);
+      if (fgets(buffer, sizeof(buffer), file) != NULL) {
+	sscanf(buffer, "%3s%d", story_name, &current);
+      }
       fclose(file);
+      running = 1;
       break;
     case '1': //if they choose the first story
       story = ash_story;
