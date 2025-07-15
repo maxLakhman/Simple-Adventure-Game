@@ -72,7 +72,7 @@ int main() {
     case 'h':
       clear();
       mvprintw(0, 0, "Controls:\n");
-      mvprintw(1, 0, "1 / 2 - Choose an option\n");
+      mvprintw(1, 0, "1 or F / 2 or J - Choose an option\n");
       mvprintw(2, 0, "i - Open inventory\n");
       mvprintw(3, 0, "TAB - Save game\n");
       mvprintw(4, 0, "q - Quit\n");
@@ -95,11 +95,15 @@ int main() {
 
     switch (input) {
     case '1':
-      mvprintw(10, 0, "DEBUG: current = %d", current);
-      mvprintw(11, 0, "DEBUG: story_length = %d", story_length);
       current = getNext(story, current, 1);
       break;
     case '2':
+      current = getNext(story, current, 2);
+      break;
+    case 'f':
+      current = getNext(story, current, 1);
+      break;
+    case 'j':
       current = getNext(story, current, 2);
       break;
     case 'i':
