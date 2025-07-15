@@ -31,3 +31,9 @@ void showInventory(Inventory *inv) {
   getch();
 }
 
+int verifyItem(Inventory *inv, const char *itemName){
+  for (int i = 0; i<inv->size; i++){
+    char itemName[] = inv->items[i];
+    mvprintw(itemName);
+  }
+}

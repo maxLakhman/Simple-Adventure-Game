@@ -11,6 +11,7 @@ typedef struct {
 
 void initInventory(Inventory *inv);
 int addItem(Inventory *inv, const char *itemName);  // returns 1 if added, 0 if full
+int verifyItem(Inventory *inv, const char *itemName);
 void showInventory(Inventory *inv);
 
 #endif
