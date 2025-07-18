@@ -4,6 +4,10 @@
 
 void initInventory(Inventory *inv) {
   inv->size = 0;
+  // Optionally clear all item slots
+  for (int i = 0; i < MAX_ITEMS; i++) {
+    inv->items[i][0] = '\0'; // mark each slot as empty
+  }
 }
 
 int addItem(Inventory *inv, const char *itemName) {
@@ -33,7 +37,9 @@ void showInventory(Inventory *inv) {
 
 int verifyItem(Inventory *inv, const char *itemName){
   for (int i = 0; i<inv->size; i++){
-    char itemName[] = inv->items[i];
-    mvprintw(itemName);
+    if (strcmp(inv->items[i], itemName) == 0) {
+      return 1; // Match found
+    }
   }
+  return 0;
 }

@@ -7,6 +7,7 @@
 #include "stdlib.h"
 #include "story_ash.h"
 #include "story_cat.h"
+#include <stdbool.h>
 
 int main() {
   int current = 0;           //represents the current node
@@ -92,7 +93,7 @@ int main() {
     FILE *file_pointer;
     char file_path[] = "savedata.txt"; // Replace with your file path
     int input = getch();
-
+    
     switch (input) {
     case '1':
       current = getNext(story, current, 1);
