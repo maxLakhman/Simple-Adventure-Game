@@ -25,7 +25,8 @@ Node cat_story[] = {
   
   //node 7
   {"At the mansion, you find Mayor Whiskertons sitting on a mountain of tuna cans, looking very round. 'I couldn't help myself!' he meows guiltily.", "Forgive him", "Demand justice", 15, 16},
-  
+
+  //node 8
   {"You use your magnifying glass to examine crumbs, whiskers, and a suspicious catnip trail leading to the park.", "Follow the catnip trail", "Check the pet store", 17, 18},
   
   {"Captain Hairball leads you through alleys. You discover a secret cat society called 'The Midnight Meowers' who steal tuna for poor kittens.", "Join their cause", "Stop their crimes", 19, 20},
