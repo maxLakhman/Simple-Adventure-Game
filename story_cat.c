@@ -2,20 +2,28 @@
 
 // Define the story nodes for "The Memory of Ash"
 Node cat_story[] = {
+  // node 0
   {"You are Mr. Whiskers, a chubby orange tabby. You wake up to find your food bowl mysteriously empty and strange paw prints leading to the kitchen.", "Follow the prints", "Yell for food", 1, 2},
   
+  //node 1 
   {"The prints lead to a tiny cat wearing a chef hat making pancakes. 'I'm Chef Mittens!' he squeaks. 'Someone stole all the tuna in town!'", "Help solve the mystery", "Demand pancakes first", 3, 4},
   
+  //node 2
   {"You sit and yowl loudly. A fluffy Persian cat appears. 'Quiet! I'm Princess Fluffington. The Tuna Bandit struck again! We need your detective skills!'", "Accept the case", "Ask for payment in treats", 5, 6},
   
+  //node 3
   {"Chef Mittens gives you a tiny magnifying glass. You find giant paw prints and tuna cans everywhere. The trail leads to Mayor Whiskertons' mansion.", "Investigate the mansion", "Gather more evidence", 7, 8},
   
+  //node 4
   {"You demand pancakes. Chef Mittens flips one onto your head. It tastes like salmon. Suddenly, a black cat in a cape appears. 'I am Captain Hairball! The town's tuna supply is in danger!'", "Follow Captain Hairball", "Eat more pancakes", 9, 10},
   
+  //node 5
   {"Princess Fluffington promises you a lifetime supply of salmon treats. The case involves mysterious tuna thefts all over Kitty City.", "Start investigating", "Negotiate for more treats", 11, 12},
   
+  //node 6
   {"You demand treats first. She sighs and drops three salmon treats. 'Fine! But hurry, the Tuna Bandit strikes at midnight!'", "Rush to investigate", "Eat treats slowly", 13, 14},
   
+  //node 7
   {"At the mansion, you find Mayor Whiskertons sitting on a mountain of tuna cans, looking very round. 'I couldn't help myself!' he meows guiltily.", "Forgive him", "Demand justice", 15, 16},
   
   {"You use your magnifying glass to examine crumbs, whiskers, and a suspicious catnip trail leading to the park.", "Follow the catnip trail", "Check the pet store", 17, 18},
