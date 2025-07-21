@@ -139,3 +139,12 @@ Node cat_story[] = {
 };
 
 int cat_story_length = sizeof(cat_story) / sizeof(Node);
+
+char item_at_node[cat_story_length][10] = {
+  "sword",
+  "shield",
+  "potion", 
+  NULL, 
+  "stick",
+  "bruh"
+};

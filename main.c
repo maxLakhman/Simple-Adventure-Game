@@ -18,6 +18,9 @@ int main() {
   FILE *file;                //The file that the save data is stored at    
   char buffer[10];           //The buffer that reads the save data
   char story_name[4];
+  //for making the inventory
+  //char item_at_node[] 
+  //for each story, have a list that contains the item at a current nodes index
 
   initInventory(&playerInventory);
   initscr();

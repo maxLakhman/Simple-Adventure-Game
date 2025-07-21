@@ -5,5 +5,6 @@
 
 extern Node ash_story[];
 extern int ash_story_length;
+extern char item_at_node[][10];
 
 #endif
