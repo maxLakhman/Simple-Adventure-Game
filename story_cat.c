@@ -1,4 +1,5 @@
 #include "story_cat.h"
+#include <stddef.h>
 
 // Define the story nodes for "The Memory of Ash"
 Node cat_story[] = {
@@ -140,11 +141,13 @@ Node cat_story[] = {
 
 int cat_story_length = sizeof(cat_story) / sizeof(Node);
 
-char item_at_node[cat_story_length][10] = {
+const char *item_at_node[] = {
   "sword",
   "shield",
-  "potion", 
-  NULL, 
+  "potion",
+  NULL,
   "stick",
-  "bruh"
+    "bruh"
 };
+
+const size_t item_at_node_length = sizeof(item_at_node) / sizeof(item_at_node[0]);
