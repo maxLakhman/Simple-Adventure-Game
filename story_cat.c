@@ -29,13 +29,17 @@ Node cat_story[] = {
 
   //node 8
   {"You use your magnifying glass to examine crumbs, whiskers, and a suspicious catnip trail leading to the park.", "Follow the catnip trail", "Check the pet store", 17, 18},
-  
+
+  //node 9
   {"Captain Hairball leads you through alleys. You discover a secret cat society called 'The Midnight Meowers' who steal tuna for poor kittens.", "Join their cause", "Stop their crimes", 19, 20},
   
+  //node 10
   {"You stuff your face with salmon pancakes. Chef Mittens laughs. 'Good! You'll need energy. The Tuna Bandit is actually three kittens in a trench coat!'", "Find the kittens", "Ask for the recipe", 21, 22},
   
+  //node 11
   {"You start investigating immediately. Princess Fluffington gives you a detective badge made of cardboard and glitter.", "Wear it proudly", "Complain it's not real", 23, 24},
   
+  //node 12
   {"She adds five more treats. 'Deal! But if you solve this, I'll throw in a box of premium catnip!'", "Get motivated", "Ask for advance payment", 25, 26},
   
   {"You rush off, treats in mouth. You discover the thief is actually a dog named Barkley who wanted to impress the cats.", "Confront Barkley", "Set a trap", 27, 28},
