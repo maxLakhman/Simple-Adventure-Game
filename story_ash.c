@@ -105,4 +105,13 @@ Node ash_story[] = {
 
 int ash_story_length = sizeof(ash_story) / sizeof(Node);
 
+const char *item_at_node[] = {
+  "sword",
+  "shield",
+  "potion",
+  NULL,
+  "stick",
+    "bruh"
+};
 
+const size_t item_at_node_length = sizeof(item_at_node) / sizeof(item_at_node[0]);
