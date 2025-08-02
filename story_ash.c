@@ -115,4 +115,4 @@ const char *item_at_node_ash[] = {
     "bruh"
 };
 
-const size_t item_at_node_length_ash = sizeof(item_at_node_ash) / sizeof(item_at_node[0]);
+const size_t item_at_node_length_ash = sizeof(item_at_node_ash) / sizeof(item_at_node_ash[0]);
