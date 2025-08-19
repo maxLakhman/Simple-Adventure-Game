@@ -18,6 +18,7 @@ int main() {
   FILE *file;                //The file that the save data is stored at    
   char buffer[10];           //The buffer that reads the save data
   char story_name[4];
+  const char *item_at_node[] = NULL;
   //for making the inventory
   //char item_at_node[] 
   //for each story, have a list that contains the item at a current nodes index
@@ -50,6 +51,7 @@ int main() {
       if (strcmp(story_name, "ash") == 0) {
         story = ash_story;
         story_length = ash_story_length;
+	
       } else if (strcmp(story_name, "cat") == 0) {
         story = cat_story;
         story_length = cat_story_length;

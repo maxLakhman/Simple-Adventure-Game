@@ -145,7 +145,7 @@ Node cat_story[] = {
 
 int cat_story_length = sizeof(cat_story) / sizeof(Node);
 
-const char *item_at_node[] = {
+const char *item_at_node_cat[] = {
   "sword",
   "shield",
   "potion",
